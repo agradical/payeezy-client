@@ -1,0 +1,7 @@
+---
+applications:
+- name: firstpick
+  memory: 512M
+  host: firstpick
+  path: target/payeezy-client-0.0.1-SNAPSHOT.jar
+  instances: 2
