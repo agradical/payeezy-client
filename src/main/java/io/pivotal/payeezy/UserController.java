@@ -13,16 +13,16 @@ public class UserController {
 	@Autowired
 	public UserDAO userDAO;
 	
-	@RequestMapping("/user")
-    public List<User> greeting(@RequestParam(value="id", defaultValue="1") String id) {
+	@RequestMapping("/getuser")
+    public List<User> getUser(@RequestParam(value="id", defaultValue="1") String id) {
         return userDAO.findById(Long.parseLong(id));
     }
 	
-	@RequestMapping("/create")
-    public void create(@RequestParam(value="id", defaultValue="1") String id) {
+	@RequestMapping("/createuser")
+    public void create(@RequestParam(value="id") String id) {
         User u = new User();
-        u.setId(Long.parseLong("1"));
-        u.setUsername("Ankur");
+        u.setId(Long.parseLong(id));
+        u.setName("Ankur");
 		userDAO.save(u);
     }
 	

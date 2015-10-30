@@ -9,24 +9,13 @@ import javax.persistence.Table;
 
 
 	@Entity
-	//@Table(name = "user")
+	@Table(name = "user")
 	public class User {
 
 		@Id
 		@GeneratedValue(strategy = GenerationType.AUTO)
 		private Long id;
 
-		@Column(name = "name")
-		private String username;
-
-		@Column(name = "password")
-		private String password;
-
-		@Column(name = "email")
-		private String email;
-
-	
-	
 		public Long getId() {
 			return id;
 		}
@@ -35,22 +24,43 @@ import javax.persistence.Table;
 			this.id = id;
 		}
 
+		@Column(name = "name")
+		private String name;
 
-		public String getUsername() {
-			return username;
+		@Column(name = "email")
+		private String email;
+
+		@Column(name = "type")
+		private String type;
+	
+		@Column(name = "cc")
+		private String cc;
+		
+		public String getCc() {
+			return cc;
 		}
 
-		public void setUsername(String username) {
-			this.username = username;
+		public void setCc(String cc) {
+			this.cc = cc;
 		}
 
-		public String getPassword() {
-			return password;
+		public String getType() {
+			return type;
 		}
 
-		public void setPassword(String password) {
-			this.password = password;
+		public void setType(String type) {
+			this.type = type;
 		}
+
+
+		public String getName() {
+			return name;
+		}
+
+		public void setName(String name) {
+			this.name = name;
+		}
+
 
 		public String getEmail() {
 			return email;

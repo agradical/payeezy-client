@@ -2,7 +2,6 @@ package io.pivotal.payeezy;
 
 import java.util.List;
 
-
 import org.springframework.data.repository.CrudRepository;
 
 public interface UserDAO extends CrudRepository<User, Long> {
@@ -16,8 +15,6 @@ public interface UserDAO extends CrudRepository<User, Long> {
 	public List<User> findByEmail(String email);
   
 	public List<User> findById(Long id);
-	
-	//public User save(User user);
-	
+		
 
 }
